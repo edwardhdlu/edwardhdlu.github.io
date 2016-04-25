@@ -43,13 +43,13 @@ body {
   font-family: "Gotham";
   background-color: #eaeaea;
   margin: 0;
-  height: 800px;
 }
 
 #header {
   background-color: white;
   width: 100%;
   position: fixed;
+  margin-top: -76px;
 }
 
 ul {
@@ -108,4 +108,71 @@ li:hover {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+.block {
+  width: 25%;
+  height: 25vw;
+  background-color: #eaeaea;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.alt {
+  background-color: #e2e2e2;
+}
+
+.block:hover {
+  background-color: #00bbd3;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.block:hover .number, .block:hover .title {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #eaeaea;
+}
+
+#container {
+  margin-top: 76px;
+}
+
+.number {
+  font-size: 96px;
+  font-weight: 500;
+  color: #555555;
+  text-align: center;
+  padding-top: 8vw;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  color: #555555;
+  letter-spacing: 4px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.display {
+  background-color: #;
+  width: 100%;
+  height: calc(100vh - 76px);
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: none;
 }
