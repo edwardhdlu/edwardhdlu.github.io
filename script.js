@@ -10,12 +10,16 @@ $(document).ready(function() {
     });
 
 	// menu functionality
+	var state = "all";
+
     $("#about-link").click(function() {
     	$(".block-about").show(250);
  		$(".block-design").hide(250);
  		$(".block-project").hide(250);
  		$(".block-contact").hide(250);
  		$(".display").hide(250);
+
+ 		state = "about";
 	});
 
 	$("#design-link").click(function() {
@@ -24,6 +28,8 @@ $(document).ready(function() {
  		$(".block-project").hide(250);
  		$(".block-contact").hide(250);
  		$(".display").hide(250);
+
+ 		state = "design";
 	});
 
 	$("#title-link").click(function() {
@@ -32,6 +38,8 @@ $(document).ready(function() {
  		$(".block-project").show(250);
  		$(".block-contact").show(250);
  		$(".display").hide(250);
+
+ 		state = "all";
 	});
 
 	$("#project-link").click(function() {
@@ -40,6 +48,8 @@ $(document).ready(function() {
  		$(".block-design").hide(250);
  		$(".block-contact").hide(250);
  		$(".display").hide(250);
+
+ 		state = "project";
 	});
 
 	$("#contact-link").click(function() {
@@ -48,6 +58,41 @@ $(document).ready(function() {
  		$(".block-design").hide(250);
  		$(".block-project").hide(250);
  		$(".display").hide(250);
+
+ 		state = "contact";
+	});
+
+	// back button
+	$("#back-button").click(function () {
+		switch (state) {
+			case "about":
+				$(".block-about").show(250);
+				$(".display").hide(250);
+				break;
+			case "design":
+				$(".block-design").show(250);
+				$(".display").hide(250);
+				break;
+			case "all":
+				$(".block-about").show(250);
+				$(".block-design").show(250);
+				$(".block-project").show(250);
+				$(".block-contact").show(250);
+				$(".display").hide(250);
+				break;
+			case "project":
+				$(".block-project").show(250);
+				$(".display").hide(250);
+				break;
+			case "contact":
+				$(".block-contact").show(250);
+				$(".display").hide(250);
+				break;
+			default:
+				$(".block-about").show(250);
+				$(".display").hide(250);
+				break;
+		}
 	});
 
 	// content functionality
