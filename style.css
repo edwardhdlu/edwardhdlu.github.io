@@ -270,7 +270,7 @@ p {
   height: 12vw;
   display: block;
   margin: 0 auto;
-  margin-top: 6vw;
+  margin-top: calc(12.5vw - 6.5vw - 12px);
 }
 
 path {
@@ -299,3 +299,47 @@ path {
     stroke-dashoffset: 1000;
   }
 }
+
+@media screen and (min-width: 1500px) {
+  .block {
+    width: 20%;
+    height: 20vw;
+  }
+
+  .icon {
+    margin-top: calc(10vw - 6.5vw - 12px);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .block {
+    width: 50%;
+    height: 50vw;
+  }
+
+  .icon {
+    height: 18vw;
+    margin-top: calc(25vw - 9.5vw - 12px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #about-link, #design-link, #project-link, #contact-link {
+    display: none;
+  }
+
+  #title-li {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .block {
+    width: 100%;
+    height: 100vw;
+  }
+
+  .icon {
+    height: 60vw;
+  }
