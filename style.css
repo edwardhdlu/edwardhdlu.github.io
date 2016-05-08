@@ -1,3 +1,7 @@
+/**************************************
+  FONT FACES
+**************************************/
+
 @font-face {
   font-family: "Gotham";
   src: url(fonts/Gotham-Light.ttf) format("truetype");
@@ -39,6 +43,10 @@
   font-style: normal;
 }
 
+/**************************************
+  COLOR PALETTE
+**************************************/
+
 .about-color {
   color: #02A8F3;
 }
@@ -55,16 +63,36 @@
   color: #FCC011;
 }
 
+/**************************************
+  GENERAL CONTENT
+**************************************/
+
 body {
   font-family: "Gotham";
   background-color: #eaeaea;
   margin: 0;
 }
 
-#load-content {
-  height: 100vh;
-  overflow: hidden;
+#container {
+  margin-top: 76px;
 }
+
+.display {
+  background-color: #eaeaea;
+  width: 100%;
+  height: auto;
+  float: left;
+  height: 0px;
+  margin: 0;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**************************************
+  HEADER
+**************************************/
 
 #header {
   background-color: white;
@@ -73,25 +101,6 @@ body {
   margin-top: -76px;
   z-index: 99;
 }
-
-#header-alt {
-  background-color: rgba(0, 0, 0, 0);
-  width: 100%;
-  height: 76px;
-  position: fixed; 
-}
-
-.back-button {
-  display: block;
-  color: #eaeaea;
-  margin-left: 38px;
-  margin-top: 38px;
-}
-
-.back-button:hover {
-  color: #555555;
-}
-
 
 #title-li-content a {
   color: white;
@@ -134,25 +143,19 @@ li {
   height: 76px;
   text-align: center;
   float: left;
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  transition: background-color 0.25s;
 
-  -webkit-transition: color 0.25s;
-  -moz-transition: color 0.25s;
-  transition: color 0.25s;
+  -webkit-transition: background-color 0.25s, color 0.25s;
+  -moz-transition: background-color 0.25s, color 0.25s;
+  transition: background-color 0.25s, color 0.25s;
 }
 
 li:hover {
   background-color: #1f2432;
   color: white;
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  transition: background-color 0.25s;
 
-  -webkit-transition: color 0.25s;
-  -moz-transition: color 0.25s;
-  transition: color 0.25s;
+  -webkit-transition: background-color 0.25s, color 0.25s;
+  -moz-transition: background-color 0.25s, color 0.25s;
+  transition: background-color 0.25s, color 0.25s;
 }
 
 #about-li:hover {
@@ -198,6 +201,10 @@ li:hover {
   transition: all 0.25s;
 }
 
+/**************************************
+  BLOCKS
+**************************************/
+
 .block {
   width: 25%;
   height: 25vw;
@@ -233,6 +240,7 @@ li:hover {
 .block-about:hover .title  {
   color: #02A8F3;
 }
+
 .block-design:hover .title  {
   color: #E71E63;
 }
@@ -245,21 +253,6 @@ li:hover {
   color: #FCC011;
 }
 
-#container {
-  margin-top: 76px;
-}
-
-.number {
-  font-size: 96px;
-  font-weight: 500;
-  color: #555555;
-  text-align: center;
-  padding-top: 8vw;
-  -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
-  transition: all 0.25s;
-}
-
 .title {
   text-align: center;
   font-size: 12px;
@@ -270,16 +263,86 @@ li:hover {
   transition: all 0.25s;
 }
 
-.display {
-  background-color: #eaeaea;
+/**************************************
+  ANIMATION
+**************************************/
+
+.icon {
+  width: 50%;
+  height: 12vw;
+  display: block;
+  margin: 0 auto;
+  margin-top: calc(12.5vw - 6.5vw - 12px);
+}
+
+.icon-animate {
+  margin: 0 auto !important;
+  height: 40vh !important;
+  padding-top: calc(50vh - 20vh - 20px);
+}
+
+path {
+  -webkit-transition: stroke 0.25s;
+  -moz-transition: stroke 0.25s;
+  transition: stroke 0.25s;
+}
+
+/* for changing color of the path on hover
+.block:hover path, .block:hover line {
+  stroke: #02A8F3;
+
+  -webkit-transition: stroke 0.25s;
+  -moz-transition: stroke 0.25s;
+  transition: stroke 0.25s;
+} */
+
+.block:hover .icon, .icon-animate {
+  stroke-dasharray: 100;
+  animation: dash 5s infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+/**************************************
+  CONTENT PAGES 
+**************************************/
+
+#loaded {
   width: 100%;
-  height: auto;
-  float: left;
-  height: 0px;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  height: 100vh;
+}
+
+#load-content {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#header-alt {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 76px;
+  position: fixed; 
+}
+
+.back-button {
+  display: block;
+  color: #eaeaea;
+  margin-left: 38px;
+  margin-top: 38px;
+}
+
+.back-button:hover {
+  color: #555555;
+}
+
+.splash {
+  background-color: #1f2432;
+  width: 100%;
+  height: 100vh;
 }
 
 h1 {
@@ -309,58 +372,6 @@ p {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-#loaded {
-  width: 100%;
-  height: 100vh;
-}
-
-.icon {
-  width: 50%;
-  height: 12vw;
-  display: block;
-  margin: 0 auto;
-  margin-top: calc(12.5vw - 6.5vw - 12px);
-}
-
-.icon-animate {
-  margin: 0 auto !important;
-  height: 40vh !important;
-  padding-top: calc(50vh - 20vh - 20px);
-}
-
-path {
-  -webkit-transition: stroke 0.25s;
-  -moz-transition: stroke 0.25s;
-  transition: stroke 0.25s;
-}
-
-/* for changing color of the path on hover
-.block:hover path, .block:hover line {
-  stroke: #02A8F3;
-
-  -webkit-transition: stroke 0.25s;
-  -moz-transition: stroke 0.25s;
-  transition: stroke 0.25s;
-}
-*/
-
-.block:hover .icon, .icon-animate {
-  stroke-dasharray: 100;
-  animation: dash 5s infinite;
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 1000;
-  }
-}
-
-.splash {
-  background-color: #1f2432;
-  width: 100%;
-  height: 100vh;
 }
 
 /**************************************
