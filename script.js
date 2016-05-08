@@ -2,6 +2,7 @@ $(document).ready(function() {
 	// load menu animation
 	$("#header").css("margin-top", "-152px");
 	$("#header").animate({ marginTop: "-76px" }, 500);
+	$("#header-alt").hide();
 
 	// load blocks animation
 	$(".block").hide();
@@ -63,7 +64,11 @@ $(document).ready(function() {
 	});
 
 	// back button
-	$("#back-button").click(function () {
+	$(".back-button").click(function () {
+		$("#container").animate({ marginTop: "76px" }, 500);
+		$("#header").animate({ marginTop: "-76px" }, 500);
+		$("#header-alt").hide();
+
 		switch (state) {
 			case "about":
 				$(".block-about").show(250);
@@ -99,6 +104,10 @@ $(document).ready(function() {
 	$(".display").hide(250);
 
 	$("a[id^=link-]").click(function() {
+		$("#header").animate({ marginTop: "-152px" }, 500);
+		$("#container").animate({ marginTop: "0px" }, 500);
+		$("#header-alt").show(1000);
+
 		$(".block-about").hide(250);
  		$(".block-design").hide(250);
  		$(".block-project").hide(250);

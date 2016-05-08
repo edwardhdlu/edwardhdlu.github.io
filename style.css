@@ -39,10 +39,31 @@
   font-style: normal;
 }
 
+.about-color {
+  color: #02A8F3;
+}
+
+.design-color {
+  color: #E71E63;
+}
+
+.project-color {
+  color: #8AC440;
+}
+
+.contact-color {
+  color: #FCC011;
+}
+
 body {
   font-family: "Gotham";
   background-color: #eaeaea;
   margin: 0;
+}
+
+#load-content {
+  height: 100vh;
+  overflow: hidden;
 }
 
 #header {
@@ -51,6 +72,35 @@ body {
   position: fixed;
   margin-top: -76px;
   z-index: 99;
+}
+
+#header-alt {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 76px;
+  position: fixed; 
+}
+
+.back-button {
+  display: block;
+  color: #eaeaea;
+  margin-left: 38px;
+  margin-top: 38px;
+}
+
+.back-button:hover {
+  color: #555555;
+}
+
+
+#title-li-content a {
+  color: white;
+}
+
+#logo {
+  width: 100%;
+  height: 48px;
+  margin-top: 12px;
 }
 
 a {
@@ -84,17 +134,25 @@ li {
   height: 76px;
   text-align: center;
   float: left;
-  -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
-  transition: all 0.25s;
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+
+  -webkit-transition: color 0.25s;
+  -moz-transition: color 0.25s;
+  transition: color 0.25s;
 }
 
 li:hover {
   background-color: #1f2432;
   color: white;
-  -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
-  transition: all 0.25s;
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+
+  -webkit-transition: color 0.25s;
+  -moz-transition: color 0.25s;
+  transition: color 0.25s;
 }
 
 #about-li:hover {
@@ -125,19 +183,16 @@ li:hover {
 }
 
 #title-li:hover {
-  background-color: white;
+  background-color: #1f2432;
+}
+
+#title-li:hover a {
+  color: white;
 }
 
 #title-link {
   font-family: "Pacifico";
   font-size: 32px !important;
-  -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
-  transition: all 0.25s;
-}
-
-#title-link:hover {
-  font-size: 34px !important;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   transition: all 0.25s;
@@ -218,37 +273,39 @@ li:hover {
 .display {
   background-color: #eaeaea;
   width: 100%;
-  height: calc(100vh - 76px);
+  height: auto;
   float: left;
-  overflow: hidden;
+  height: 0px;
+  margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 h1 {
-  font-size: 96px;
+  text-align: center;
+  font-size: 16px;
   font-weight: 400;
   width: 50%;
-  margin-left: 5%;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  float: left;
-  color: #2f2f2f;
+  margin: 0 auto;
+  color: #02A8F3;
+  letter-spacing: 8px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 p {
-  float: left;
-  width: 45%;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
   padding-left: 18px;
   border-left: 3px solid #555555;
   color: #555555;
   font-weight: 200;
-  line-height: 150%;
-  margin-left: 5%;
+  line-height: 200%;
+  margin-top: 75px;
+  margin-bottom: 75px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -259,18 +316,18 @@ p {
   height: 100vh;
 }
 
-#back-button {
-  margin-left: 5%;
-  float: left;
-  margin-top: 50px;
-}
-
 .icon {
   width: 50%;
   height: 12vw;
   display: block;
   margin: 0 auto;
   margin-top: calc(12.5vw - 6.5vw - 12px);
+}
+
+.icon-animate {
+  margin: 0 auto !important;
+  height: 40vh !important;
+  padding-top: calc(50vh - 20vh - 20px);
 }
 
 path {
@@ -289,7 +346,7 @@ path {
 }
 */
 
-.block:hover .icon {
+.block:hover .icon, .icon-animate {
   stroke-dasharray: 100;
   animation: dash 5s infinite;
 }
@@ -300,7 +357,17 @@ path {
   }
 }
 
-@media screen and (min-width: 1500px) {
+.splash {
+  background-color: #1f2432;
+  width: 100%;
+  height: 100vh;
+}
+
+/**************************************
+  MEDIA QUERIES 
+**************************************/
+
+@media screen and (min-width: 1400px) {
   .block {
     width: 20%;
     height: 20vw;
@@ -313,6 +380,18 @@ path {
 
 @media screen and (max-width: 1000px) {
   .block {
+    width: 33.33%;
+    height: 33.33vw;
+  }
+
+  .icon {
+    height: 14vw;
+    margin-top: calc(16.67vw - 7vw - 12px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .block {
     width: 50%;
     height: 50vw;
   }
@@ -321,9 +400,7 @@ path {
     height: 18vw;
     margin-top: calc(25vw - 9.5vw - 12px);
   }
-}
 
-@media screen and (max-width: 800px) {
   #about-link, #design-link, #project-link, #contact-link {
     display: none;
   }
@@ -343,3 +420,13 @@ path {
   .icon {
     height: 60vw;
   }
+
+  h1 {
+    width: 90%;
+    margin-top: -20px;
+  }
+
+  p {
+    width: 90%;
+  }
+}
