@@ -118,4 +118,16 @@ $(document).ready(function() {
 		$(".display").show(250);
 	});
 
+	$(".elevator").click(function(e) {
+		e.preventDefault();
+		$("body").animate({
+		    scrollTop: $(".splash").offset().top
+		 }, 500);
+	});
+
+	$(".scroll").click(function(e) {
+		e.preventDefault();
+		$("body").animate({ scrollTop: $(".splash").height() }, 500);
+	});
+
 });
