@@ -1,11 +1,15 @@
 $(document).ready(function() {
+
+	$(".icon-scroll").css("opacity", "0");
+	$(".icon-scroll").delay(750).animate({ opacity: "1" }, 1000);
+
 	// load menu animation
 	$("#header").css("margin-top", "-152px");
 	$("#header").animate({ marginTop: "-76px" }, 500);
-	$("#header-alt").hide();
+	$("#header-alt").hide(0);
 
 	// load blocks animation
-	$(".block").hide();
+	$(".block").hide(0);
 	$(".block").each(function(i, e) {
     	$(this).delay(500 + 1000 * Math.random()).fadeTo(750, 1);
     });
@@ -67,43 +71,39 @@ $(document).ready(function() {
 	$(".back-button").click(function () {
 		$("#container").animate({ marginTop: "76px" }, 500);
 		$("#header").animate({ marginTop: "-76px" }, 500);
-		$("#header-alt").hide();
+		$("#header-alt").hide(0);
+
+		var winHeight = $(window).height();
+		$(".display").animate({ marginTop: winHeight + "px" }, 500);
+		$(".display").hide(0);
 
 		switch (state) {
 			case "about":
-				$(".block-about").show(250);
-				$(".display").hide(250);
+				$(".block-about").delay(350).show(250);
 				break;
 			case "design":
-				$(".block-design").show(250);
-				$(".display").hide(250);
+				$(".block-design").delay(350).show(250);
 				break;
 			case "all":
-				$(".block-about").show(250);
-				$(".block-design").show(250);
-				$(".block-project").show(250);
-				$(".block-contact").show(250);
-				$(".display").hide(250);
+				$(".block-about").delay(350).show(250);
+				$(".block-design").delay(350).show(250);
+				$(".block-project").delay(350).show(250);
+				$(".block-contact").delay(350).show(250);
 				break;
 			case "project":
-				$(".block-project").show(250);
-				$(".display").hide(250);
+				$(".block-project").delay(350).show(250);
 				break;
 			case "contact":
-				$(".block-contact").show(250);
-				$(".display").hide(250);
-				break;
-			default:
-				$(".block-about").show(250);
-				$(".display").hide(250);
+				$(".block-contact").delay(350).show(250);
 				break;
 		}
 	});
 
 	// content functionality
-	$(".display").hide(250);
+	$(".display").hide(0);
 
-	$("a[id^=link-]").click(function() {
+	$("a[id^=link-]").click(function(e) {
+		e.preventDefault();
 		$("#header").animate({ marginTop: "-152px" }, 500);
 		$("#container").animate({ marginTop: "0px" }, 500);
 		$("#header-alt").show(1000);
@@ -113,21 +113,27 @@ $(document).ready(function() {
  		$(".block-project").hide(250);
  		$(".block-contact").hide(250);
 
- 		var insert = "<object id='loaded' type='text/html' data='content/" + this.id + ".html'></object>";
+ 		var parsed = this.id.split("-")[1];
+ 		var insert = "<object id='loaded' type='text/html' data='pages/" + parsed + ".html'></object>";
  		document.getElementById("load-content").innerHTML = insert;
-		$(".display").show(250);
+
+ 		var winHeight = $(window).height();
+		$(".display").css("margin-top", winHeight + "px");
+		$(".display").show(0);
+		$(".display").animate({ marginTop: "0px" }, 500);
+		
 	});
 
 	$(".elevator").click(function(e) {
 		e.preventDefault();
 		$("body").animate({
 		    scrollTop: $(".splash").offset().top
-		 }, 500);
+		 }, 750);
 	});
 
 	$(".scroll").click(function(e) {
 		e.preventDefault();
-		$("body").animate({ scrollTop: $(".splash").height() }, 500);
+		$("body").animate({ scrollTop: $(".splash").height() }, 750);
 	});
 
 });

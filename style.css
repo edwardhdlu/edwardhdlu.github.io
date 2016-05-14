@@ -293,6 +293,19 @@ li:hover {
   margin-top: 11vh;
 }
 
+.icon-scroll path {
+  webkit-transition: stroke 0.75s;
+  -moz-transition: stroke 0.75s;
+  transition: stroke 0.75s;
+}
+
+.icon-scroll:hover path {
+  stroke: #eaeaea;
+  webkit-transition: stroke 0.75s;
+  -moz-transition: stroke 0.75s;
+  transition: stroke 0.75s;
+}
+
 path {
   -webkit-transition: stroke 0.25s;
   -moz-transition: stroke 0.25s;
@@ -376,8 +389,8 @@ p {
   width: 50%;
   display: block;
   margin: 0 auto;
-  padding-left: 18px;
-  border-left: 3px solid #555555;
+  padding-left: 0px;
+  border-left: 0px solid #555555;
   color: #555555;
   font-weight: 200;
   line-height: 200%;
@@ -385,6 +398,17 @@ p {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.caption {
+  font-weight: 200;
+  font-size: 12px;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: -65px;
+  margin-bottom: 75px;
 }
 
 .blurb {
@@ -408,16 +432,32 @@ p {
   width: 20%;
 }
 
-.elevator {
-  text-align: center;
-  margin: 0 auto;
+.img-large {
+  width: 40%;
+}
+
+.link-container {
+  width: 50%;
   display: block;
-  width: 120px;
+  margin: 0 auto;
+  overflow: hidden;
   margin-bottom: 75px;
+  text-align: center;
 }
 
 .elevator:hover {
   color: #555555;
+}
+
+.elevator-container {
+  background-color: #1f2432;
+  width: 100%;
+  padding: 75px;
+  box-sizing: border-box;
+}
+
+.elevator-container .elevator {
+  margin: 0 auto;
 }
 
 /**************************************
@@ -483,11 +523,7 @@ p {
     margin-top: -20px;
   }
 
-  p {
-    width: 90%;
-  }
-
-  .img-small {
+  p, .caption, .img-small, .img-large {
     width: 90%;
   }
 }
