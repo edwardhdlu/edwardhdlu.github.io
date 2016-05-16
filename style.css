@@ -288,7 +288,6 @@ li:hover {
 .icon-scroll {
   width: 60px;
   height: 60px;
-  display: block;
   margin: 0 auto;
   margin-top: 11vh;
 }
@@ -339,6 +338,7 @@ path {
 #loaded {
   width: 100%;
   height: 100vh;
+  position: fixed;
 }
 
 #load-content {
@@ -351,6 +351,7 @@ path {
   width: 100%;
   height: 76px;
   position: fixed; 
+  z-index: 98;
 }
 
 .back-button {
@@ -386,9 +387,7 @@ h1 {
 }
 
 p {
-  width: 50%;
-  display: block;
-  margin: 0 auto;
+  width: 100%;
   padding-left: 0px;
   border-left: 0px solid #555555;
   color: #555555;
@@ -436,8 +435,23 @@ p {
   width: 40%;
 }
 
+.img-pair {
+  width: calc(80% + 30px);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.img-pair img {
+  width: calc(50% - 15px);
+  float: left;
+}
+
+.img-pair .left {
+  margin-right: 10px;
+}
+
 .link-container {
-  width: 50%;
+  width: 100%;
   display: block;
   margin: 0 auto;
   overflow: hidden;
@@ -457,6 +471,12 @@ p {
 }
 
 .elevator-container .elevator {
+  margin: 0 auto;
+}
+
+.text-container {
+  width: 50%;
+  display: block;
   margin: 0 auto;
 }
 
@@ -523,7 +543,27 @@ p {
     margin-top: -20px;
   }
 
-  p, .caption, .img-small, .img-large {
-    width: 90%;
+  .caption {
+    width: 85%;
+  }
+
+  .img, .text-container {
+    width: 85%;
+  }
+
+  .img-pair {
+    width: 85%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .img-pair img {
+    width: 100%;
+    float: left;
+  }
+
+  .img-pair .left {
+    margin-right: 0px;
+    margin-bottom: 10px;
   }
 }

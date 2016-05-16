@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	$(".icon-scroll").css("opacity", "0");
-	$(".icon-scroll").delay(750).animate({ opacity: "1" }, 1000);
+	$(".icon-scroll").delay(750).animate({ opacity: "1" }, 500);
 
 	// load menu animation
 	$("#header").css("margin-top", "-152px");
@@ -120,7 +120,7 @@ $(document).ready(function() {
  		var winHeight = $(window).height();
 		$(".display").css("margin-top", winHeight + "px");
 		$(".display").show(0);
-		$(".display").animate({ marginTop: "0px" }, 500);
+		$(".display").delay(250).animate({ marginTop: "0px" }, 500);
 		
 	});
 
