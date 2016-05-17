@@ -16,6 +16,7 @@ $(document).ready(function() {
 
 	// menu functionality
 	var state = "all";
+	$(".hint").hide(0);
 
     $("#about-link").click(function() {
     	$(".block-about").show(250);
@@ -24,6 +25,10 @@ $(document).ready(function() {
  		$(".block-contact").hide(250);
  		$(".display").hide(250);
 
+ 		$(".underline span").animate({ width: "0%" }, 250);
+ 		$(".underline .about").animate({ width: "100%" }, 250);
+
+ 		$(".hint").show(250);
  		state = "about";
 	});
 
@@ -34,6 +39,10 @@ $(document).ready(function() {
  		$(".block-contact").hide(250);
  		$(".display").hide(250);
 
+ 		$(".underline span").animate({ width: "0%" }, 250);
+ 		$(".underline .design").animate({ width: "100%" }, 250);
+
+ 		$(".hint").show(250);
  		state = "design";
 	});
 
@@ -44,6 +53,10 @@ $(document).ready(function() {
  		$(".block-contact").show(250);
  		$(".display").hide(250);
 
+ 		$(".underline span").animate({ width: "0" }, 250);
+ 		$(".underline span").animate({ width: "25%" }, 250);
+
+ 		$(".hint").hide(250);
  		state = "all";
 	});
 
@@ -54,6 +67,10 @@ $(document).ready(function() {
  		$(".block-contact").hide(250);
  		$(".display").hide(250);
 
+ 		$(".underline span").animate({ width: "0%" }, 250);
+ 		$(".underline .project").animate({ width: "100%" }, 250);
+
+ 		$(".hint").show(250);
  		state = "project";
 	});
 
@@ -64,6 +81,10 @@ $(document).ready(function() {
  		$(".block-project").hide(250);
  		$(".display").hide(250);
 
+ 		$(".underline span").animate({ width: "0%" }, 250);
+ 		$(".underline .contact").animate({ width: "100%" }, 250);
+
+ 		$(".hint").show(250);
  		state = "contact";
 	});
 

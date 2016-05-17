@@ -106,10 +106,6 @@ body {
   z-index: 99;
 }
 
-#title-li-content a {
-  color: white;
-}
-
 #logo {
   width: 100%;
   height: 48px;
@@ -184,26 +180,73 @@ li:hover {
   font-size: 16px;
 }
 
+#title-link {
+  font-family: "Pacifico";
+  font-size: 32px !important;
+  color: #555555;
+
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
 #title-li {
   padding-top: 4px;
   padding-bottom: 12px;
 }
 
 #title-li:hover {
-  background-color: #1f2432;
+  color: #eaeaea;
 }
 
-#title-li:hover a {
-  color: white;
-}
-
-#title-link {
-  font-family: "Pacifico";
-  font-size: 32px !important;
+#title-li:hover .underline {
+  width: 100%;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   transition: all 0.25s;
 }
+
+.hint {
+  font-size: 8px;
+  font-family: "Gotham";
+  font-weight: 600;
+  display: block;
+  margin-top: -10px;
+}
+
+.underline {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  height: 5px;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.underline span {
+  float: left;
+  width: 25%;
+  height: 100%;
+  height: 5px;
+}
+
+.underline .about {
+  background-color: #02A8F3;
+}
+
+.underline .design {
+  background-color: #E71E63;
+}
+
+.underline .project {
+  background-color: #8AC440;
+}
+
+.underline .contact {
+  background-color: #FCC011;
+}
+
 
 /**************************************
   BLOCKS
