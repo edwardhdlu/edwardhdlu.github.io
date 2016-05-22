@@ -329,19 +329,19 @@ li:hover {
 }
 
 .icon-scroll {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   margin: 0 auto;
-  margin-top: 11vh;
+  margin-top: 12vh;
 }
 
-.icon-scroll path {
+.icon-scroll path, .icon-scroll line {
   webkit-transition: stroke 0.75s;
   -moz-transition: stroke 0.75s;
   transition: stroke 0.75s;
 }
 
-.icon-scroll:hover path {
+.icon-scroll:hover path, .icon-scroll:hover line {
   stroke: #eaeaea;
   webkit-transition: stroke 0.75s;
   -moz-transition: stroke 0.75s;
@@ -354,16 +354,7 @@ path {
   transition: stroke 0.25s;
 }
 
-/* for changing color of the path on hover
-.block:hover path, .block:hover line {
-  stroke: #02A8F3;
-
-  -webkit-transition: stroke 0.25s;
-  -moz-transition: stroke 0.25s;
-  transition: stroke 0.25s;
-} */
-
-.block:hover .icon, .icon-animate, .icon-scroll:hover {
+.block:hover .icon, .icon-animate {
   stroke-dasharray: 100;
   animation: dash 5s infinite;
 }
