@@ -102,7 +102,7 @@ body {
   background-color: white;
   width: 100%;
   position: fixed;
-  margin-top: -76px;
+  top: 0;
   z-index: 99;
 }
 
@@ -247,6 +247,49 @@ li:hover {
   background-color: #FCC011;
 }
 
+.hamburger-container {
+  display: none;
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+
+  -webkit-transition: background-color 0.25s, color 0.25s;
+  -moz-transition: background-color 0.25s, color 0.25s;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.hamburger-container:hover {
+  background-color: #1F2432;
+
+  -webkit-transition: background-color 0.25s, color 0.25s;
+  -moz-transition: background-color 0.25s, color 0.25s;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.hamburger-container path {
+  -webkit-transition: all 0.25s, color 0.25s;
+  -moz-transition: all 0.25s, color 0.25s;
+  transition: all 0.25s, color 0.25s;
+}
+
+.hamburger-container:hover path {
+  fill: #eaeaea;
+  stroke: #eaeaea;
+
+  -webkit-transition: all 0.25s, color 0.25s;
+  -moz-transition: all 0.25s, color 0.25s;
+  transition: all 0.25s, color 0.25s;
+}
+
+.hamburger {
+  width: 32px;
+  height: 32px;
+  padding: 22px;
+}
 
 /**************************************
   BLOCKS
@@ -553,12 +596,45 @@ p {
   }
 
   #about-link, #design-link, #project-link, #contact-link {
-    display: none;
+    margin-top: 81px;
+    position: absolute;
+  }
+
+  #about-link li, #design-link li, #project-link li, #contact-link li {
+    width: 25vw;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    height: initial;
+    text-align: center;
+    background-color: #1f2432;
+    border-bottom: 5px solid #555555;
+  }
+
+  #about-link {
+    margin-left: -100%;
+  }
+
+  #design-link {
+    margin-left: -75%;
+  }
+
+  #project-link {
+    margin-left: -50%;
+  }
+
+  #contact-link {
+    margin-left: -25%;
   }
 
   #title-li {
     width: 100%;
     text-align: center;
+  }
+
+  .hamburger-container {
+    display: inline-block;
   }
 }
 

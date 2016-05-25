@@ -4,8 +4,8 @@ $(document).ready(function() {
 	$(".icon-scroll").delay(750).animate({ opacity: "1" }, 500);
 
 	// load menu animation
-	$("#header").css("margin-top", "-152px");
-	$("#header").animate({ marginTop: "-76px" }, 500);
+	$("#header").css("margin-top", "-76px");
+	$("#header").animate({ marginTop: "0px" }, 500);
 	$("#header-alt").hide(0);
 
 	// load blocks animation
@@ -91,7 +91,7 @@ $(document).ready(function() {
 	// back button
 	$(".back-button").click(function () {
 		$("#container").animate({ marginTop: "76px" }, 500);
-		$("#header").animate({ marginTop: "-76px" }, 500);
+		$("#header").animate({ marginTop: "0px" }, 500);
 		$("#header-alt").hide(0);
 
 		var winHeight = $(window).height();
@@ -125,7 +125,14 @@ $(document).ready(function() {
 
 	$("a[id^=link-]").click(function(e) {
 		e.preventDefault();
-		$("#header").animate({ marginTop: "-152px" }, 500);
+		$("#about-link").animate({ marginLeft: "-100%" }, 100);
+		$("#design-link").animate({ marginLeft: "-75%" }, 100);
+		$("#project-link").animate({ marginLeft: "-50%" }, 100);
+		$("#contact-link").animate({ marginLeft: "-25%" }, 100);
+
+		$("#container").delay(100).animate({ marginTop: "76px" }, 100);
+			
+		$("#header").animate({ marginTop: "-76px" }, 500);
 		$("#container").animate({ marginTop: "0px" }, 500);
 		$("#header-alt").show(1000);
 
@@ -155,6 +162,30 @@ $(document).ready(function() {
 	$(".scroll").click(function(e) {
 		e.preventDefault();
 		$("body").animate({ scrollTop: $(".splash").height() }, 750);
+	});
+
+	$(".hamburger-container").click(function() {
+		var aboutPos = $("#about-link").css("margin-left");
+		var designPos = $("#design-link").css("margin-left");
+		var projectPos = $("#project-link").css("margin-left");
+		var contactPos = $("#contact-link").css("margin-left");
+
+		if (aboutPos == "0px") {
+			$("#about-link").animate({ marginLeft: "-100%" }, 100);
+			$("#design-link").animate({ marginLeft: "-75%" }, 100);
+			$("#project-link").animate({ marginLeft: "-50%" }, 100);
+			$("#contact-link").animate({ marginLeft: "-25%" }, 100);
+
+			$("#container").delay(100).animate({ marginTop: "76px" }, 100);
+		}
+		else {
+			$("#container").animate({ marginTop: "128px" }, 100);
+
+			$("#contact-link").delay(100).animate({ marginLeft: "75%" }, 100);
+			$("#project-link").delay(100).animate({ marginLeft: "50%" }, 100);
+			$("#design-link").delay(100).animate({ marginLeft: "25%" }, 100);
+			$("#about-link").delay(100).animate({ marginLeft: "0%" }, 100);	
+		}
 	});
 
 });
