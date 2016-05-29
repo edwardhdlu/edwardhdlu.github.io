@@ -125,13 +125,12 @@ $(document).ready(function() {
 
 	$("a[id^=link-]").click(function(e) {
 		e.preventDefault();
-		$("#about-link").animate({ marginLeft: "-100%" }, 100);
-		$("#design-link").animate({ marginLeft: "-75%" }, 100);
-		$("#project-link").animate({ marginLeft: "-50%" }, 100);
-		$("#contact-link").animate({ marginLeft: "-25%" }, 100);
+		$("#contact-link").animate({ marginTop: "-47px" }, 100);
+		$("#project-link").animate({ marginTop: "-47px" }, 100);
+		$("#design-link").animate({ marginTop: "-47px" }, 100);
+		$("#about-link").animate({ marginTop: "-47px" }, 100);	
 
 		$("#container").delay(100).animate({ marginTop: "76px" }, 100);
-			
 		$("#header").animate({ marginTop: "-76px" }, 500);
 		$("#container").animate({ marginTop: "0px" }, 500);
 		$("#header-alt").show(1000);
@@ -140,6 +139,10 @@ $(document).ready(function() {
  		$(".block-design").hide(250);
  		$(".block-project").hide(250);
  		$(".block-contact").hide(250);
+
+ 		$(".back-button").attr("class", "back-button");
+ 		var blockType = $(this).find($(".block"))[0].className.split(" ").slice(-1)[0].split("-")[1];
+ 		$(".back-button").addClass(blockType + "-color");
 
  		var parsed = this.id.split("-")[1];
  		var insert = "<object id='loaded' type='text/html' data='pages/" + parsed + ".html'></object>";
@@ -165,27 +168,35 @@ $(document).ready(function() {
 	});
 
 	$(".hamburger-container").click(function() {
-		var aboutPos = $("#about-link").css("margin-left");
-		var designPos = $("#design-link").css("margin-left");
-		var projectPos = $("#project-link").css("margin-left");
-		var contactPos = $("#contact-link").css("margin-left");
+		var curPos = $("#about-link").css("margin-top");
 
-		if (aboutPos == "0px") {
-			$("#about-link").animate({ marginLeft: "-100%" }, 100);
-			$("#design-link").animate({ marginLeft: "-75%" }, 100);
-			$("#project-link").animate({ marginLeft: "-50%" }, 100);
-			$("#contact-link").animate({ marginLeft: "-25%" }, 100);
+		if (curPos[0] == "-") {
+			$("#container").animate({ marginTop: "128px" }, 250);
 
-			$("#container").delay(100).animate({ marginTop: "76px" }, 100);
+			$("#about-link").animate({ marginTop: "81px" }, 100);
+			$("#design-link").animate({ marginTop: "81px" }, 100);
+			$("#project-link").animate({ marginTop: "81px" }, 100);
+			$("#contact-link").animate({ marginTop: "81px" }, 100);
 		}
 		else {
-			$("#container").animate({ marginTop: "128px" }, 100);
+			$("#container").animate({ marginTop: "76px" }, 250);
 
-			$("#contact-link").delay(100).animate({ marginLeft: "75%" }, 100);
-			$("#project-link").delay(100).animate({ marginLeft: "50%" }, 100);
-			$("#design-link").delay(100).animate({ marginLeft: "25%" }, 100);
-			$("#about-link").delay(100).animate({ marginLeft: "0%" }, 100);	
+			$("#contact-link").animate({ marginTop: "-47px" }, 100);
+			$("#project-link").animate({ marginTop: "-47px" }, 100);
+			$("#design-link").animate({ marginTop: "-47px" }, 100);
+			$("#about-link").animate({ marginTop: "-47px" }, 100);	
 		}
 	});
+
+	var transitionHeader = $(".splash").height();
+  	$(window).scroll(function() {
+    var scroll = window.pageYOffset || document.documentElement.scrollTop;
+    	if (scroll >= transitionHeader) {
+        	$(".back-button").addClass("scrolled");
+    	}
+        else {
+        	$(".back-button").removeClass("scrolled");
+        }
+  	});
 
 });

@@ -113,19 +113,19 @@ body {
 }
 
 a {
-  color: #FCC011;
   text-decoration: none;
-  -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
-  transition: all 0.25s;
+  -webkit-transition: opacity 0.25s, color 0.25s;
+  -moz-transition: opacity 0.25s, color 0.25s;
+  transition: opacity 0.25s, color 0.25s;
 }
 
 a:hover {
-  color: #121725;
-  -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
-  transition: all 0.25s;
+  color: #555555;
+  -webkit-transition: opacity 0.25s, color 0.25s;
+  -moz-transition: opacity 0.25s, color 0.25s;
+  transition: opacity 0.25s, color 0.25s;
 }
+
 
 ul {
   margin: 0;
@@ -219,6 +219,8 @@ li:hover {
   width: 100%;
   margin: 0 auto;
   height: 5px;
+  background-color: #eaeaea;
+
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   transition: all 0.25s;
@@ -433,14 +435,10 @@ path {
 
 .back-button {
   display: block;
-  color: #eaeaea;
   margin-left: 38px;
   margin-top: 38px;
   width: 64px;
-}
-
-.back-button:hover {
-  color: #555555;
+  opacity: 0.9;
 }
 
 .splash {
@@ -448,6 +446,14 @@ path {
   width: 100%;
   height: 100vh;
   margin-bottom: 75px;
+}
+
+.splash.watwhenwhere {
+  background-image: url("images/watwhenwhere-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -596,8 +602,24 @@ p {
   }
 
   #about-link, #design-link, #project-link, #contact-link {
-    margin-top: 81px;
+    margin-top: -47px;
     position: absolute;
+  }
+
+  #about-link {
+    margin-left: 0vw;
+  }
+
+  #design-link {
+    margin-left: 25vw;
+  }
+
+  #project-link {
+    margin-left: 50vw;
+  }
+
+  #contact-link {
+    margin-left: 75vw;
   }
 
   #about-link li, #design-link li, #project-link li, #contact-link li {
@@ -609,23 +631,15 @@ p {
     height: initial;
     text-align: center;
     background-color: #1f2432;
+    color: #555555;
     border-bottom: 5px solid #555555;
   }
 
-  #about-link {
-    margin-left: -100%;
-  }
-
-  #design-link {
-    margin-left: -75%;
-  }
-
-  #project-link {
-    margin-left: -50%;
-  }
-
-  #contact-link {
-    margin-left: -25%;
+  #title-link {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    z-index: 20;
   }
 
   #title-li {
@@ -635,6 +649,13 @@ p {
 
   .hamburger-container {
     display: inline-block;
+    z-index: 21;
+  }
+
+  .underline {
+    position: absolute;
+    top: 76px;
+    z-index: 22;
   }
 }
 
