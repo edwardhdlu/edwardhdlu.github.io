@@ -446,14 +446,31 @@ path {
   width: 100%;
   height: 100vh;
   margin-bottom: 75px;
-}
-
-.splash.watwhenwhere {
-  background-image: url("images/watwhenwhere-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+}
+
+
+.splash.about {
+  background-image: url("images/about-bg.png");
+}
+
+.splash.watwhenwhere {
+  background-image: url("images/watwhenwhere-bg.png");
+}
+
+.splash.planner {
+  background-image: url("images/planner-bg.png");
+}
+
+.splash.predictable {
+  background-image: url("images/predictable-bg.png");
+}
+
+.splash.logogen {
+  background-image: url("images/logogen-bg.png");
 }
 
 h1 {

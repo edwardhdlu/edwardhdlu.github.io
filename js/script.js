@@ -128,7 +128,7 @@ $(document).ready(function() {
 		$("#contact-link").animate({ marginTop: "-47px" }, 100);
 		$("#project-link").animate({ marginTop: "-47px" }, 100);
 		$("#design-link").animate({ marginTop: "-47px" }, 100);
-		$("#about-link").animate({ marginTop: "-47px" }, 100);	
+		$("#about-link").animate({ marginTop: "-47px" }, 100);
 
 		$("#container").delay(100).animate({ marginTop: "76px" }, 100);
 		$("#header").animate({ marginTop: "-76px" }, 500);
