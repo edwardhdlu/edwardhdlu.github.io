@@ -173,18 +173,18 @@ $(document).ready(function() {
 		if (curPos[0] == "-") {
 			$("#container").animate({ marginTop: "128px" }, 250);
 
-			$("#about-link").animate({ marginTop: "81px" }, 100);
-			$("#design-link").animate({ marginTop: "81px" }, 100);
-			$("#project-link").animate({ marginTop: "81px" }, 100);
-			$("#contact-link").animate({ marginTop: "81px" }, 100);
+			$("#about-link").animate({ marginTop: "81px" }, 250);
+			$("#design-link").animate({ marginTop: "81px" }, 250);
+			$("#project-link").animate({ marginTop: "81px" }, 250);
+			$("#contact-link").animate({ marginTop: "81px" }, 250);
 		}
 		else {
 			$("#container").animate({ marginTop: "76px" }, 250);
 
-			$("#contact-link").animate({ marginTop: "-47px" }, 100);
-			$("#project-link").animate({ marginTop: "-47px" }, 100);
-			$("#design-link").animate({ marginTop: "-47px" }, 100);
-			$("#about-link").animate({ marginTop: "-47px" }, 100);	
+			$("#contact-link").animate({ marginTop: "-47px" }, 250);
+			$("#project-link").animate({ marginTop: "-47px" }, 250);
+			$("#design-link").animate({ marginTop: "-47px" }, 250);
+			$("#about-link").animate({ marginTop: "-47px" }, 250);	
 		}
 	});
 
