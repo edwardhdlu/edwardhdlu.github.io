@@ -465,12 +465,24 @@ path {
   background-image: url("images/planner-bg.png");
 }
 
+.splash.transference {
+  background-image: url("images/transference-bg.png");
+}
+
 .splash.predictable {
   background-image: url("images/predictable-bg.png");
 }
 
 .splash.logogen {
   background-image: url("images/logogen-bg.png");
+}
+
+.splash.fiverr {
+  background-image: url("images/fiverr-bg.png");
+}
+
+.splash.contact {
+  background-image: url("images/contact-bg.png");
 }
 
 h1 {
