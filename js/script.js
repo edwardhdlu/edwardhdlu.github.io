@@ -1,8 +1,5 @@
 $(document).ready(function() {
 
-	$(".icon-scroll").css("opacity", "0");
-	$(".icon-scroll").delay(750).animate({ opacity: "1" }, 500);
-
 	// load menu animation
 	$("#header").css("margin-top", "-76px");
 	$("#header").animate({ marginTop: "0px" }, 500);
@@ -16,78 +13,57 @@ $(document).ready(function() {
 
 	// menu functionality
 	var state = "all";
-	$(".hint").hide(0);
 
-    $("#about-link").click(function() {
-    	$(".block-about").show(250);
- 		$(".block-design").hide(250);
- 		$(".block-project").hide(250);
- 		$(".block-contact").hide(250);
- 		$(".display").hide(250);
+    $("#header nav li a[id$='-link']").click(function() {
+    	var name = $(this).attr("id").split("-")[0];
+    	state = name;
 
- 		$(".underline span").animate({ width: "0%" }, 250);
- 		$(".underline .about").animate({ width: "100%" }, 250);
+    	$("#header nav li a").removeClass("active");
+	   	$(this).addClass("active");
 
- 		$(".hint").show(250);
- 		state = "about";
+    	if (name == "all") {
+    		$("div[class^='block']").animate({"opacity": 1}, 250)
+    	}
+
+    	else {
+	    	$("div[class^='block']").not(".block-" + name).animate({"opacity": 0.2}, 250)
+	    	$(".block-" + name).animate({"opacity": 1}, 250)
+	    }
 	});
 
-	$("#design-link").click(function() {
-    	$(".block-design").show(250);
- 		$(".block-about").hide(250);
- 		$(".block-project").hide(250);
- 		$(".block-contact").hide(250);
- 		$(".display").hide(250);
+    // mobile menu functionality
+    if ($(window).width() <= 800) {
+		$("#header nav").height(0);
+	}
 
- 		$(".underline span").animate({ width: "0%" }, 250);
- 		$(".underline .design").animate({ width: "100%" }, 250);
+    $(window).resize(function() {
+    	if ($(window).width() <= 800) {
+    		$("#header nav").height(0);
+    	}
+    });
 
- 		$(".hint").show(250);
- 		state = "design";
-	});
+    $(".hamburger").click(function(e) {
+    	if ($("#header nav").height() <= 0) {
+    		$("#header nav").animate({"height": "256px"}, 250);
+    	}
+    	else {
+    		$("#header nav").animate({"height": 0}, 250);
+    	}
+    });
 
-	$("#title-link").click(function() {
-    	$(".block-about").show(250);
- 		$(".block-design").show(250);
- 		$(".block-project").show(250);
- 		$(".block-contact").show(250);
- 		$(".display").hide(250);
+    // content functionality
+    $(".block").click(function(e) {
+    	e.preventDefault();
+    	if ($("#container").hasClass("sidebar")) {
+    		$("#container").removeClass("sidebar");
+    	}
+    	else {
+    		$("#container").addClass("sidebar");
+    	}
+    });
 
- 		$(".underline span").animate({ width: "0" }, 250);
- 		$(".underline span").animate({ width: "25%" }, 250);
 
- 		$(".hint").hide(250);
- 		state = "all";
-	});
-
-	$("#project-link").click(function() {
-    	$(".block-project").show(250);
- 		$(".block-about").hide(250);
- 		$(".block-design").hide(250);
- 		$(".block-contact").hide(250);
- 		$(".display").hide(250);
-
- 		$(".underline span").animate({ width: "0%" }, 250);
- 		$(".underline .project").animate({ width: "100%" }, 250);
-
- 		$(".hint").show(250);
- 		state = "project";
-	});
-
-	$("#contact-link").click(function() {
-    	$(".block-contact").show(250);
- 		$(".block-about").hide(250);
- 		$(".block-design").hide(250);
- 		$(".block-project").hide(250);
- 		$(".display").hide(250);
-
- 		$(".underline span").animate({ width: "0%" }, 250);
- 		$(".underline .contact").animate({ width: "100%" }, 250);
-
- 		$(".hint").show(250);
- 		state = "contact";
-	});
-
+    /*
 	// back button
 	$(".back-button").click(function () {
 		$("#container").animate({ marginTop: "76px" }, 500);
@@ -120,13 +96,14 @@ $(document).ready(function() {
 		}
 	});
 
+	
 	// content functionality
 	$(".display").hide(0);
 
 	$("a[id^=link-]").click(function(e) {
 		e.preventDefault();
 		$("#contact-link").animate({ marginTop: "-47px" }, 100);
-		$("#project-link").animate({ marginTop: "-47px" }, 100);
+		$("#project-link").animate({ marginTop: "-47px" }, 10ß0);
 		$("#design-link").animate({ marginTop: "-47px" }, 100);
 		$("#about-link").animate({ marginTop: "-47px" }, 100);
 
@@ -198,5 +175,6 @@ $(document).ready(function() {
         	$(".back-button").removeClass("scrolled");
         }
   	});
+	*/
 
 });
