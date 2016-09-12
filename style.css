@@ -44,31 +44,7 @@
 }
 
 /**************************************
-  COLOR PALETTE
-**************************************/
-
-.about-color {
-  color: #D98B3A;
-  stroke: #D98B3A;
-}
-
-.design-color {
-  color: #E71E63;
-  stroke: #E71E63;
-}
-
-.project-color {
-  color: #D6523C;
-  stroke: #D6523C;
-}
-
-.contact-color {
-  color: #FCC011;
-  stroke: #FCC011;
-}
-
-/**************************************
-  GENERAL CONTENT
+  GENERAL
 **************************************/
 
 body {
@@ -91,18 +67,6 @@ body {
   transition: all 0.25s;
 }
 
-.display {
-  background-color: #eaeaea;
-  width: 100%;
-  height: auto;
-  float: left;
-  height: 0px;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 /**************************************
   HEADER
 **************************************/
@@ -122,21 +86,6 @@ body {
   margin-top: 12px;
 }
 
-a {
-  text-decoration: none;
-  -webkit-transition: opacity 0.25s, color 0.25s;
-  -moz-transition: opacity 0.25s, color 0.25s;
-  transition: opacity 0.25s, color 0.25s;
-}
-
-a:hover {
-  color: #555555;
-  -webkit-transition: opacity 0.25s, color 0.25s;
-  -moz-transition: opacity 0.25s, color 0.25s;
-  transition: opacity 0.25s, color 0.25s;
-}
-
-
 .header-container {
   width: 80%;
   height: 76px;
@@ -150,8 +99,9 @@ a:hover {
   font-weight: 100;
   font-size: 24px;
   float: left;
-  margin-top: 24px;
+  margin-top: 26px;
   color: #555555;
+  cursor: pointer;
 }
 
 .logo b {
@@ -175,6 +125,7 @@ nav li {
 nav li a {
   color: #555555;
   font-weight: 300;
+  text-decoration: none;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   transition: all 0.25s;
@@ -232,44 +183,21 @@ nav li a#info-link::after {
   background-color: #4E4E56;
 }
 
-.hamburger-container {
-  display: none;
-  width: 32px;
-  height: 32px;
-  margin: 22px 0;
+.close-container {
+  width: 24px;
+  height: 24px;
+  margin: 26px 0;
   overflow: hidden;
   position: absolute;
-  top: 0;
+  top: 100px;
   right: 4px;
-  background-color: white;
 
   -webkit-transition: background-color 0.25s, color 0.25s;
   -moz-transition: background-color 0.25s, color 0.25s;
   transition: background-color 0.25s, color 0.25s;
 }
 
-.hamburger-container path {
-  -webkit-transition: all 0.25s, color 0.25s;
-  -moz-transition: all 0.25s, color 0.25s;
-  transition: all 0.25s, color 0.25s;
-}
-
-.hamburger-container:hover path:nth-child(1) {
-  fill: #DA635D;
-  stroke: #DA635D;
-}
-
-.hamburger-container:hover path:nth-child(2) {
-  fill: #B1938B;
-  stroke: #B1938B;
-}
-
-.hamburger-container:hover path:nth-child(3) {
-  fill: #4E4E56;
-  stroke: #4E4E56;
-}
-
-.hamburger {
+.close-container img {
   width: 100%;
   height: 100%;
 }
@@ -324,21 +252,6 @@ nav li a#info-link::after {
   background-color: #4E4E56;
 }
 
-.block:hover {
-  overflow: hidden;
-  -webkit-transition: background-color 0.25s;
-  -moz-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-}
-
-.block:hover::before {
-  width: 150%;
-  padding-top: 150%;
-  -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
-  transition: all 0.25s;
-}
-
 .title {
   text-align: center;
   font-size: 0px;
@@ -355,13 +268,35 @@ nav li a#info-link::after {
 
 }
 
+.block:hover,
+.block.active {
+  overflow: hidden;
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+.block:hover::before,
+.block.active::before {
+  width: 150%;
+  padding-top: 150%;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
 .block:hover .title {
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   transition: all 0.25s;
   color: white;
   font-size: 12px;
+}
 
+.block:hover .icon,
+.block.active .icon {
+  stroke-dasharray: 100;
+  animation: dash 5s infinite;
 }
 
 #container.sidebar {
@@ -370,8 +305,9 @@ nav li a#info-link::after {
   left: 0;
   top: -2px;
   overflow: scroll;
-  height: calc(100vh - 76px);
+  height: calc(100vh - 60px);
   padding: 0;
+  background-color: #eaeaea;
 }
 
 #container.sidebar::-webkit-scrollbar { 
@@ -395,6 +331,7 @@ nav li a#info-link::after {
 
 .icon {
   width: 50%;
+  height: 50%;
   display: block;
   position: absolute;
   left: 50%;
@@ -434,11 +371,6 @@ path {
   transition: stroke 0.25s;
 }
 
-.block:hover .icon, .icon-animate {
-  stroke-dasharray: 100;
-  animation: dash 5s infinite;
-}
-
 @keyframes dash {
   to {
     stroke-dashoffset: 1000;
@@ -450,9 +382,11 @@ path {
 **************************************/
 
 #loaded {
-  width: 100%;
-  height: 100vh;
+  width: calc(100% - 100px);
+  height: calc(100vh - 76px);
   position: fixed;
+  right: 0;
+  bottom: 0;
 }
 
 #load-content {
@@ -460,77 +394,22 @@ path {
   overflow: hidden;
 }
 
-#header-alt {
-  background-color: rgba(0, 0, 0, 0);
-  width: 100%;
-  height: 76px;
-  position: fixed; 
-  z-index: 98;
-}
-
-.back-button {
-  display: block;
-  margin-left: 38px;
-  margin-top: 38px;
-  width: 64px;
-  opacity: 0.9;
-}
-
-.splash {
-  background-color: #1f2432;
-  width: 100%;
-  height: 100vh;
-  margin-bottom: 75px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-
-.splash.about {
-  background-image: url("images/about-bg.png");
-}
-
-.splash.watwhenwhere {
-  background-image: url("images/watwhenwhere-bg.png");
-}
-
-.splash.planner {
-  background-image: url("images/planner-bg.png");
-}
-
-.splash.transference {
-  background-image: url("images/transference-bg.png");
-}
-
-.splash.predictable {
-  background-image: url("images/predictable-bg.png");
-}
-
-.splash.logogen {
-  background-image: url("images/logogen-bg.png");
-}
-
-.splash.fiverr {
-  background-image: url("images/fiverr-bg.png");
-}
-
-.splash.contact {
-  background-image: url("images/contact-bg.png");
-}
-
 h1 {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 400;
-  width: 50%;
-  margin: 0 auto;
-  color: #D98B3A;
-  letter-spacing: 8px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  color: #555;
+  font-size: 48px;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 48px;
+  display: inline-block;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  height: 6px;
+  width: 100px;
+  margin-top: 12px;
+  background-color: #555555;
 }
 
 p {
@@ -540,61 +419,69 @@ p {
   color: #555555;
   font-weight: 200;
   line-height: 200%;
-  margin-bottom: 75px;
+  margin: 0;
+  margin-bottom: 48px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.caption {
-  font-weight: 200;
-  font-size: 12px;
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: -65px;
-  margin-bottom: 75px;
+a {
+  color: #DA635D;
+  text-decoration: none;
+  position: relative;
+  font-weight: 300;
 }
 
-.blurb {
+.content-side {
+  width: 30%;
+  height: 100vh;
+  float: left;
+  background-color: #2f2f2f;
+  position: fixed;
+  overflow-y: scroll;
+  background-size: cover;
+  background-position: center;
+}
+
+.content-side::-webkit-scrollbar { 
+  width: 0px;
+}
+
+.content-main {
+  width: 70%;
+  min-height: 100vh;
+  float: left;
+  padding-top: 48px;
+  box-sizing: border-box;
+}
+
+.content-side + .content-main {
+  float: right;
+}
+
+.content-main a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #DA635D;
+  left: 0;
+  bottom: -8px;
+  webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.content-main a:hover::after {
   width: 100%;
-  text-align: center;
-  color: #D98B3A;
-  font-weight: 200;
-  font-size: 9px;
-  margin-top: 2vh;
 }
 
 .img {
   display: block;
-  width: 50%;
-  margin: 0 auto;
-  border: 5px solid #e2e2e2;
-  margin-bottom: 75px;
-}
-
-.img-small {
-  width: 20%;
-}
-
-.img-large {
-  width: 40%;
-}
-
-.img-pair {
-  width: calc(80% + 30px);
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.img-pair img {
-  width: calc(50% - 15px);
-  float: left;
-}
-
-.img-pair .left {
-  margin-right: 10px;
+  width: 100%;
+  border-bottom: 4px solid #eaeaea;
 }
 
 .link-container {
@@ -606,25 +493,11 @@ p {
   text-align: center;
 }
 
-.elevator:hover {
-  color: #555555;
-}
-
-.elevator-container {
-  background-color: #1f2432;
-  width: 100%;
-  padding: 75px;
-  box-sizing: border-box;
-}
-
-.elevator-container .elevator {
-  margin: 0 auto;
-}
-
 .text-container {
-  width: 50%;
+  width: 80%;
+  max-width: 800px;
   display: block;
-  margin: 0 auto;
+  margin: 0 10%;
 }
 
 /**************************************
@@ -659,59 +532,19 @@ p {
     width: 85%;
   }
 
-  .hamburger-container {
-    display: inline-block;
-    z-index: 21;
-  }
-
-  #header nav {
-    position: fixed;
-    top: 46px;
+  .content-side {
+    height: auto;
     width: 100%;
-    left: 0;
-    overflow: hidden;
+    position: relative;
   }
 
-  #header nav li {
+  .content-main {
     width: 100%;
-    margin: 0;
-    text-align: center;
   }
 
-  #header nav li a {
-    display: block;
-    padding: 24px 0;
-    color: white;
-    webkit-transition: all 0.75s;
-    -moz-transition: all 0.75s;
-    transition: all 0.75s;
+  #loaded {
+    width: calc(100% - 100px);
   }
-
-  #header nav li a:hover,
-  #header nav li a.active {
-    background-color: white;
-  }
-
-  #header nav li a::after {
-    display: none;
-  }
-
-  #all-link {
-    background-color: #2f2f2f;
-  }  
-
-  #code-link {
-    background-color: #DA635D;
-  }
-
-  #design-link {
-    background-color: #B1938B;
-  }
-
-  #info-link {
-    background-color: #4E4E56;
-  }
-
 }
 
 @media screen and (max-width: 500px) {
@@ -726,5 +559,22 @@ p {
 
   .header-container {
     width: 90%;
+  }
+
+  #loaded {
+    width: 100%;
+  }
+
+  #container.sidebar {
+    display: none;
+  }
+
+  #header nav {
+    display: none;
+  }
+
+  .close-container {
+    display: inline-block;
+    top: 0;
   }
 }
