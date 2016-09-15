@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+	// preload pages and images
+	$("a[id^=block-link-]").each(function(i, val) {
+		var page = val.href.split("/")[8];
+		var insert = "<object id='loaded' type='text/html' data='pages/" + page + "'></object>";
+ 		$("#load-content").html(insert);
+	});
+	$("#load-content").html("");
+
 	// load menu animation
 	$("#header").css("margin-top", "-76px");
 	$("#header").animate({ marginTop: "0px" }, 500);
