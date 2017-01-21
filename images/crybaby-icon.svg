@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="900px" height="900px" viewBox="0 0 900 900" enable-background="new 0 0 900 900" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<path fill="none" stroke="#2F2F2F" stroke-width="20" stroke-miterlimit="10" d="M607.071,792.929
+				C603.182,796.818,595.5,800,590,800H310c-5.5,0-13.182-3.182-17.071-7.071l-85.857-85.857C203.182,703.182,200,695.5,200,690V210
+				c0-5.5,3.182-13.182,7.071-17.071l85.857-85.857C296.818,103.182,304.5,100,310,100h280c5.5,0,13.182,3.182,17.071,7.071
+				l85.857,85.857C696.818,196.817,700,204.5,700,210v480c0,5.5-3.182,13.182-7.071,17.071L607.071,792.929z"/>
+		</g>
+		<g>
+			<path fill="none" stroke="#2F2F2F" stroke-width="20" stroke-miterlimit="10" d="M600,690c0,5.5-4.5,10-10,10H310
+				c-5.5,0-10-4.5-10-10V210c0-5.5,4.5-10,10-10h280c5.5,0,10,4.5,10,10V690z"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#2F2F2F" stroke-width="20" stroke-miterlimit="10" x1="400" y1="700" x2="400" y2="800"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#2F2F2F" stroke-width="20" stroke-miterlimit="10" x1="500" y1="700" x2="500" y2="800"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#2F2F2F" stroke-width="20" stroke-miterlimit="10" x1="300" y1="300" x2="500" y2="300"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#2F2F2F" stroke-width="20" stroke-miterlimit="10" x1="300" y1="400" x2="400" y2="400"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#2F2F2F" stroke-width="20" stroke-miterlimit="10" x1="300" y1="500" x2="500" y2="500"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#2F2F2F" stroke-width="20" stroke-miterlimit="10" x1="300" y1="600" x2="400" y2="600"/>
+		</g>
+	</g>
+</g>
+</svg>

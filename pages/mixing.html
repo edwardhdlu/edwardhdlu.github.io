@@ -1,0 +1,23 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<script src="../js/jquery.js"></script>
+	<script src="../js/script.js"></script>
+</head>
+
+<div class="content-main">
+	<div class="text-container">
+		<h1>The Mixing Pot</h1>
+		<p>
+			This is a game about ingredients made with JavaScript and Python. You're given three random ingredients to start, and each pair of ingredients has a positive or negative score depending on how well they go together. When your score dips below 200, you lose, and your final score is the number of ingredients you managed to throw into the mixing pot.
+		</p>
+		<p>
+			I used <a target="_blank" href="http://www.bbc.co.uk/food/recipes">BBC Recipes</a> for the ingredient data. I scraped about 200,000 different recipes by starting from the ingredients directory to build a list of ingredients, then searching for all recipes containing each ingredient. The problem with this was that searching for "beef" would return all recipes that used "beef steak", "beef shank", etc. So instead of the recipe itself, I used its id as part of the url, then scraped each ingredient within that recipe. The end result is a dictionary where the keys are ingredient ids and the values are lists of ingredients used by that recipe.
+		</p>
+		<p>
+			The scoring system underwent several changes, and the pairwise scores make sense for the most part. Given a pair of ingredients A and B, an array is built containing the frequencies of all pairs of ingredients containing either A or B. Then this array is sorted and split into five quantiles associated with five different scores. A separate sixth quantile is reserved for ingredients that have never occurred in a recipe together.
+		</p>
+		<p>
+			<a target="_blank" href="https://edwardhdlu.github.io/mixing-pot/app/">View this project</a>
+		</p>
+	</div>
+</body>

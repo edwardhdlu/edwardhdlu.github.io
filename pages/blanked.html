@@ -1,0 +1,23 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<script src="../js/jquery.js"></script>
+	<script src="../js/script.js"></script>
+</head>
+
+<div class="content-main">
+	<div class="text-container">
+		<h1>Blanked</h1>
+		<p>
+			Blanked is a game where you are given an excerpt of a short story missing a word, and you have to guess the word from five options. The app was built with Tensorflow, Flask and MongoDB. 
+		</p>
+		<p>
+			The data was scraped using Python and BeautifulSoup from <a target="_blank" href="http://www.classicshorts.com/">Classic Short Stories</a>, chosen for its straightforward site layout. I then trained a character level LSTM on the whole collection of stories. The idea here was that since LSTMs are sequence in and sequence out, it could simulate sequences of words as if they were from the short stories. I then generated a bunch of questions by picking a random sentence and removing the lowest frequency word, to avoid answers like "the" or "a". These questions were then saved to a database for faster access. Once the model was trained, I used the part of the sentence leading up to the removed word as a "seed" to predict the immediate next word. I repeated this process until I had four different predicted words and used these as the multiple choice "answers".
+		</p>
+		<p>
+			In hindsight, word2vec would have been a much better model as it can actually predict similar words from a given context. LSTMs produce interesting sequences, but without context, it's often very easy to figure out which word is the actual answer.
+		</p>
+		<p>
+			<a target="_blank" href="https://github.com/edwardhdlu/blanked">View this project on Github</a>
+		</p>
+	</div>
+</body>

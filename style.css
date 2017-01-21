@@ -575,6 +575,11 @@ a {
 
   .close-container {
     display: inline-block;
-    top: 0;
+    top: -26px;
+  }
+
+  .logo {
+    float: none;
+    text-align: center;
   }
 }

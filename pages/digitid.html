@@ -1,0 +1,24 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<script src="../js/jquery.js"></script>
+	<script src="../js/script.js"></script>
+</head>
+
+<div class="content-main">
+	<div class="text-container">
+		<h1>Digit Identifier</h1>
+		<p>
+			This is a simple web app that lets you upload an image, from which it can identify a digit. The image is automatically cropped using a square bounding box and resized to 32x32, and the top three probabilities of which digit it appears to be are displayed. 
+		</p>
+		<p>
+			I used a subset of the 32x32 <a target="_blank" href="http://ufldl.stanford.edu/housenumbers/">Street View House Numbers</a> dataset. Specifically, I used a 10000/5000/5000 split for the training, test and validation data, respectively. The model is a convolutional neural net implemented in TensorFlow with two convolutional layers and two fully connected layers. The activation functions used are "leaky relus", a slightly altered version of the relu function that has y = ax for x < 0 instead of simply y = 0. I implemented this as well as the "penalized tanh" discussed in the paper <a target="_blank" href="https://arxiv.org/abs/1602.05980">Revise Saturated Activation Functions</a> as a TensorFlow op kernel. 
+		</p>
+		<p>
+			After training the model for 1000 epochs with batch size 50 and obtaining an accuracy of about 85% on the test set, I saved the weights and model to a Flask server that runs the model on data passed in through POST requests if they are in the correct format (an array of 1024 floats). I then built a simple jQuery interface that reads in an uploaded photo, crops and resizes it, gets the prediction from the server, applies softmax, and displays the resulting top three percentages.
+		</p>
+		<p>
+			<a target="_blank" href="https://edwardhdlu.github.io/digit-identifier/">View this project</a>
+			<i> - Note the first prediction might take a bit of time as the Flask server is set up on Heroku and has to "wake up"</i>
+		</p>
+	</div>
+</body>
