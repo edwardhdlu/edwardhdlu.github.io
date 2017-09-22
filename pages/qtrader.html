@@ -1,0 +1,19 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<script src="../js/jquery.js"></script>
+	<script src="../js/script.js"></script>
+</head>
+
+<div class="content-main">
+	<div class="text-container">
+		<h1>Q-Trader</h1>
+		<p>
+			I wanted to experiment with applying Google's Q-learning algorithm to the stock market. The idea behind deep Q-learning is essentially to use a neural net to predict the value of <i>Q(s,a)</i>, or the value obtained from taking action <i>a</i> at state <i>s</i>. This allows the model to compute the best action given any state in a Markov process, some famous examples of which include Go, Chess and Atari games. The stock market is obviously not a Markov process, but I wanted to see if different state representations could allow the Q-learning agent to make reasonable short-term predictions.
+		</p>
+		<p>
+			The agent actually performs pretty well as it's able to predict most peaks and troughs. I'd like to enhance the state representation with other signals in the future, including things like Sharpe ratio, long-term trends and aggregate sentiment scores for entities associated with the stock.
+		<p>
+			<a target="_blank" href="https://github.com/edwardhdlu/q-trader">View this project on Github</a>
+		</p>
+	</div>
+</body>
